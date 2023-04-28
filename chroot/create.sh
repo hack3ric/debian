@@ -60,7 +60,7 @@ base_name=$(basename $1)
 /sbin/chroot $1 <<EOF
 apt update
 echo $base_name > /etc/hostname
-echo "127.0.0.1	$base_name" >> /etc/hosts
+echo "127.0.0.1 $base_name" >> /etc/hosts
 /sbin/useradd -m -s /bin/bash $user
 echo $user:$user | /sbin/chpasswd
 echo root:root | /sbin/chpasswd
@@ -76,7 +76,7 @@ alias dquilt="quilt --quiltrc=\${HOME}/.quiltrc-dpkg"
 complete -F _quilt_completion -o filenames dquilt
 EOF
 cat <<EOF > home/$user/.quiltrc-dpkg
-d=. ; while [ ! -d \$d/debian -a \$(readlink -e $d) != / ]; do d=\$d/..; done
+d=. ; while [ ! -d \$d/debian -a \$(readlink -e \$d) != / ]; do d=\$d/..; done
 if [ -d \$d/debian ] && [ -z \$QUILT_PATCHES ]; then
   # if in Debian packaging tree with unset \$QUILT_PATCHES
   QUILT_PATCHES="debian/patches"
