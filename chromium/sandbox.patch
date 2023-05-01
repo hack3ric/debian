@@ -629,7 +629,7 @@ Index: chromium-111.0.5563.64/sandbox/linux/syscall_broker/broker_process.cc
      case __NR_unlink:
        return !fast_check || policy_->allowed_command_set.test(COMMAND_UNLINK);
  #endif
-Index: chromium-111.0.5563.64/sandbox/linux/system_headers/linux_seccomp.h
+Index: chromium-111.0.5563.64/sandbox/linu/system_headers/linux_seccomp.h
 ===================================================================
 --- a/sandbox/linux/system_headers/linux_seccomp.h
 +++ b/sandbox/linux/system_headers/linux_seccomp.h

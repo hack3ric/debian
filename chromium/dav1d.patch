@@ -1,3 +1,5 @@
+Index: chromium-102.0.5005.61/third_party/dav1d/config/linux/riscv64/config.h
+===================================================================
 --- /dev/null
 +++ b/third_party/dav1d/config/linux/riscv64/config.h
 @@ -0,0 +1,38 @@
